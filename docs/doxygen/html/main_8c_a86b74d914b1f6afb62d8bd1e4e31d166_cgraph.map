@@ -1,0 +1,11 @@
+<map id="OnNewBox" name="OnNewBox">
+<area shape="rect" id="Node000001" title="Registra una nueva caja y envia el evento al HMI." alt="" coords="5,31,94,57"/>
+<area shape="rect" id="Node000002" href="$_classifier_8c.html#a6bc38faab18ac29b750ae7607058a19c" title="Registra una nueva caja medida por el HC&#45;SR04." alt="" coords="142,5,275,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,34,129,31,124,33,95,40"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a2bec24fbf70e6bfc572847a7d417a1e4" title="Envia un evento al HMI Qt via protocolo UNER." alt="" coords="166,56,251,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="94,48,153,59,148,61,94,54"/>
+<area shape="rect" id="Node000004" href="$_comm_8c.html#ae71d12e317420e00d9c2ce5f67ecf640" title="Encola una trama UNER en el buffer de transmision." alt="" coords="323,56,420,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="251,67,310,69,305,69,252,72"/>
+<area shape="rect" id="Node000005" href="$_comm_8c.html#ae2ccc0b50360e3c4a2ee0c5bd8c5960c" title="Escribe un byte en el buffer circular de transmision." alt="" coords="468,56,550,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="421,67,456,69,450,69,421,72"/>
+</map>

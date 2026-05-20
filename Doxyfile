@@ -1,0 +1,84 @@
+# ==========================================================================
+# Doxyfile - Firmware Clasificador de Cajas (ATmega328P)
+# ==========================================================================
+
+# --- Proyecto ---
+PROJECT_NAME           = "Clasificador de Cajas - Firmware ATmega328P"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "Firmware para sistema de clasificacion de paquetes por altura en cinta transportadora"
+PROJECT_LOGO           =
+OUTPUT_DIRECTORY       = docs/doxygen
+OUTPUT_LANGUAGE        = Spanish
+
+# --- Entrada ---
+INPUT                  = CintaReal
+FILE_PATTERNS          = *.c *.h
+RECURSIVE              = NO
+ENCODING               = UTF-8
+
+# --- Extraccion ---
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
+
+# --- Documentacion ---
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+ALWAYS_DETAILED_SEC    = YES
+INLINE_INHERITED_MEMB  = YES
+FULL_PATH_NAMES        = NO
+OPTIMIZE_OUTPUT_FOR_C  = YES
+TYPEDEF_HIDES_STRUCT   = NO
+SORT_MEMBER_DOCS       = NO
+
+# --- Preprocesador ---
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+PREDEFINED             = F_CPU=16000000u \
+                         __attribute__(x)=
+
+# --- Warnings ---
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+# --- Formato HTML ---
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_COLORSTYLE        = AUTO_LIGHT
+HTML_TIMESTAMP         = YES
+SEARCHENGINE           = YES
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 280
+DISABLE_INDEX          = NO
+
+# --- LaTeX (deshabilitado) ---
+GENERATE_LATEX         = NO
+
+# --- Diagramas (requiere Graphviz) ---
+HAVE_DOT               = YES
+DOT_PATH               = "C:/Program Files/Graphviz/bin"
+DOT_NUM_THREADS        = 0
+CLASS_DIAGRAMS         = YES
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+GROUP_GRAPHS           = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+DOT_GRAPH_MAX_NODES    = 100
+MAX_DOT_GRAPH_DEPTH    = 0
+
+# --- Source browser ---
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES

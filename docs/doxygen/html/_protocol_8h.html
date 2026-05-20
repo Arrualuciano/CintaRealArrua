@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Clasificador de Cajas - Firmware ATmega328P: Referencia del archivo Protocol.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Clasificador de Cajas - Firmware ATmega328P<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Firmware para sistema de clasificacion de paquetes por altura en cinta transportadora</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_protocol_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo Protocol.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definiciones del protocolo de comunicacion entre MCU y HMI Qt.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en Protocol.h:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_protocol_8h__incl.svg" width="91" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_protocol_8h__dep__incl.svg" width="91" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="_protocol_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a739ebf2e17d2832f56069581a3a9a5d1" id="r_a739ebf2e17d2832f56069581a3a9a5d1"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a739ebf2e17d2832f56069581a3a9a5d1">CMD_ALIVE</a>&#160;&#160;&#160;0xF0</td></tr>
+<tr class="memitem:ab905e6aff2332984df0552c6b50203f2" id="r_ab905e6aff2332984df0552c6b50203f2"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ab905e6aff2332984df0552c6b50203f2">CMD_START</a>&#160;&#160;&#160;0x50</td></tr>
+<tr class="memitem:a46dc7ae84992bfe62cc00731959a67f4" id="r_a46dc7ae84992bfe62cc00731959a67f4"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a46dc7ae84992bfe62cc00731959a67f4">CMD_STOP</a>&#160;&#160;&#160;0x51</td></tr>
+<tr class="memitem:afe1dd8546b0a8cd30b19a0229205c8df" id="r_afe1dd8546b0a8cd30b19a0229205c8df"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#afe1dd8546b0a8cd30b19a0229205c8df">CMD_RESET</a>&#160;&#160;&#160;0x53</td></tr>
+<tr class="memitem:a8cec63f1c0d443c689128fa497bef22d" id="r_a8cec63f1c0d443c689128fa497bef22d"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8cec63f1c0d443c689128fa497bef22d">CMD_SET_CONFIG</a>&#160;&#160;&#160;0x60   /* [tipo0, tipo1, tipo2]           */</td></tr>
+<tr class="memitem:a40a73a8a8d97236fdf4125a572851078" id="r_a40a73a8a8d97236fdf4125a572851078"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a40a73a8a8d97236fdf4125a572851078">CMD_SET_TIMES</a>&#160;&#160;&#160;0x61   /* [servo, timeHi, timeLo]         */</td></tr>
+<tr class="memitem:a0eb4f16c54756aee592cc282da0b9e63" id="r_a0eb4f16c54756aee592cc282da0b9e63"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0eb4f16c54756aee592cc282da0b9e63">CMD_SET_THRESHOLD</a>&#160;&#160;&#160;0x62   /* [grande, mediana, pequena]      */</td></tr>
+<tr class="memitem:ae0d74311707c10853b0aa41ea5031c5b" id="r_ae0d74311707c10853b0aa41ea5031c5b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ae0d74311707c10853b0aa41ea5031c5b">CMD_TEST_SERVO</a>&#160;&#160;&#160;0x63   /* [servoNum]                      */</td></tr>
+<tr class="memitem:a74f5a74888a3b9f396cbd3cc8dba4b9f" id="r_a74f5a74888a3b9f396cbd3cc8dba4b9f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a74f5a74888a3b9f396cbd3cc8dba4b9f">CMD_SET_SERVO_ANGLE</a>&#160;&#160;&#160;0x64   /* [servoNum, pulseTicks]          */</td></tr>
+<tr class="memitem:a1f932ba09ec74fa627a8ac62e85ddd25" id="r_a1f932ba09ec74fa627a8ac62e85ddd25"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a1f932ba09ec74fa627a8ac62e85ddd25">CMD_CALIB_MODE</a>&#160;&#160;&#160;0x65   /* [1=entrar, 0=salir]             */</td></tr>
+<tr class="memitem:a684a7d485987e85f55ca5f7c4c1a66c3" id="r_a684a7d485987e85f55ca5f7c4c1a66c3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a684a7d485987e85f55ca5f7c4c1a66c3">EVT_ALIVE</a>&#160;&#160;&#160;0xF0</td></tr>
+<tr class="memitem:a80133f590ee16e8dece0c8e5b2db3163" id="r_a80133f590ee16e8dece0c8e5b2db3163"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a80133f590ee16e8dece0c8e5b2db3163">EVT_NEW_BOX</a>&#160;&#160;&#160;0x70   /* [type, servo, timeHi, timeLo]   */</td></tr>
+<tr class="memitem:a8d9b12e6d2eafcbedb206cd958174fef" id="r_a8d9b12e6d2eafcbedb206cd958174fef"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8d9b12e6d2eafcbedb206cd958174fef">EVT_IR_SENSOR</a>&#160;&#160;&#160;0x71   /* [sensorNum, state]              */</td></tr>
+<tr class="memitem:af25d925755e66f82d8e1785dc7e00694" id="r_af25d925755e66f82d8e1785dc7e00694"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#af25d925755e66f82d8e1785dc7e00694">EVT_SERVO_FIRED</a>&#160;&#160;&#160;0x72   /* [servoNum]                      */</td></tr>
+<tr class="memitem:a1c2ab0868ffec546eca5126897f3067f" id="r_a1c2ab0868ffec546eca5126897f3067f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a1c2ab0868ffec546eca5126897f3067f">EVT_DISTANCE</a>&#160;&#160;&#160;0x74   /* [distHi, distLo]                */</td></tr>
+<tr class="memitem:ad70bf4636cfe179baecb3e559cfd11bf" id="r_ad70bf4636cfe179baecb3e559cfd11bf"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad70bf4636cfe179baecb3e559cfd11bf">EVT_CALIB_TIME</a>&#160;&#160;&#160;0x75   /* [sensorNum, timeHi, timeLo]     */</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Definiciones del protocolo de comunicacion entre MCU y HMI Qt. </p>
+<p>Define los identificadores de comandos (Qt -&gt; MCU) y eventos (MCU -&gt; Qt) utilizados sobre el protocolo UNER.</p>
+<p>Comandos (Qt -&gt; MCU):</p><ul>
+<li>CMD_ALIVE (0xF0): heartbeat bidireccional.</li>
+<li>CMD_START (0x50): iniciar clasificacion.</li>
+<li>CMD_STOP (0x51): detener clasificacion.</li>
+<li>CMD_RESET (0x53): resetear sistema.</li>
+<li>CMD_SET_CONFIG (0x60): configurar tipos de salida [tipo0, tipo1, tipo2].</li>
+<li>CMD_SET_TIMES (0x61): configurar tiempo de arribo [servo, timeHi, timeLo].</li>
+<li>CMD_SET_THRESHOLD (0x62): configurar umbrales de distancia [grande, mediana, pequena].</li>
+<li>CMD_TEST_SERVO (0x63): test manual de un servo [servoNum].</li>
+<li>CMD_SET_SERVO_ANGLE (0x64): ajustar pulso de servo [servoNum, pulseTicks].</li>
+<li>CMD_CALIB_MODE (0x65): entrar/salir del modo calibracion [1=entrar, 0=salir].</li>
+</ul>
+<p>Eventos (MCU -&gt; Qt):</p><ul>
+<li>EVT_ALIVE (0xF0): respuesta heartbeat.</li>
+<li>EVT_NEW_BOX (0x70): nueva caja detectada [type, servo, timeHi, timeLo].</li>
+<li>EVT_IR_SENSOR (0x71): cambio de estado IR [sensorNum, state].</li>
+<li>EVT_SERVO_FIRED (0x72): servo disparado [servoNum].</li>
+<li>EVT_DISTANCE (0x74): distancia medida [distHi, distLo].</li>
+<li>EVT_CALIB_TIME (0x75): tiempo de calibracion [sensorNum, timeHi, timeLo].</li>
+</ul>
+<dl class="section author"><dt>Autor</dt><dd>Luciano </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Mayo 2026 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a739ebf2e17d2832f56069581a3a9a5d1" name="a739ebf2e17d2832f56069581a3a9a5d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739ebf2e17d2832f56069581a3a9a5d1">&#9670;&#160;</a></span>CMD_ALIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_ALIVE&#160;&#160;&#160;0xF0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00040">40</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="ab905e6aff2332984df0552c6b50203f2" name="ab905e6aff2332984df0552c6b50203f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab905e6aff2332984df0552c6b50203f2">&#9670;&#160;</a></span>CMD_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_START&#160;&#160;&#160;0x50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00041">41</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a46dc7ae84992bfe62cc00731959a67f4" name="a46dc7ae84992bfe62cc00731959a67f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46dc7ae84992bfe62cc00731959a67f4">&#9670;&#160;</a></span>CMD_STOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_STOP&#160;&#160;&#160;0x51</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00042">42</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="afe1dd8546b0a8cd30b19a0229205c8df" name="afe1dd8546b0a8cd30b19a0229205c8df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1dd8546b0a8cd30b19a0229205c8df">&#9670;&#160;</a></span>CMD_RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_RESET&#160;&#160;&#160;0x53</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00043">43</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a8cec63f1c0d443c689128fa497bef22d" name="a8cec63f1c0d443c689128fa497bef22d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cec63f1c0d443c689128fa497bef22d">&#9670;&#160;</a></span>CMD_SET_CONFIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SET_CONFIG&#160;&#160;&#160;0x60   /* [tipo0, tipo1, tipo2]           */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00044">44</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a40a73a8a8d97236fdf4125a572851078" name="a40a73a8a8d97236fdf4125a572851078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40a73a8a8d97236fdf4125a572851078">&#9670;&#160;</a></span>CMD_SET_TIMES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SET_TIMES&#160;&#160;&#160;0x61   /* [servo, timeHi, timeLo]         */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00045">45</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a0eb4f16c54756aee592cc282da0b9e63" name="a0eb4f16c54756aee592cc282da0b9e63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb4f16c54756aee592cc282da0b9e63">&#9670;&#160;</a></span>CMD_SET_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SET_THRESHOLD&#160;&#160;&#160;0x62   /* [grande, mediana, pequena]      */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00046">46</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="ae0d74311707c10853b0aa41ea5031c5b" name="ae0d74311707c10853b0aa41ea5031c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0d74311707c10853b0aa41ea5031c5b">&#9670;&#160;</a></span>CMD_TEST_SERVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_TEST_SERVO&#160;&#160;&#160;0x63   /* [servoNum]                      */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00047">47</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a74f5a74888a3b9f396cbd3cc8dba4b9f" name="a74f5a74888a3b9f396cbd3cc8dba4b9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f5a74888a3b9f396cbd3cc8dba4b9f">&#9670;&#160;</a></span>CMD_SET_SERVO_ANGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SET_SERVO_ANGLE&#160;&#160;&#160;0x64   /* [servoNum, pulseTicks]          */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00048">48</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a1f932ba09ec74fa627a8ac62e85ddd25" name="a1f932ba09ec74fa627a8ac62e85ddd25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f932ba09ec74fa627a8ac62e85ddd25">&#9670;&#160;</a></span>CMD_CALIB_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_CALIB_MODE&#160;&#160;&#160;0x65   /* [1=entrar, 0=salir]             */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00049">49</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a684a7d485987e85f55ca5f7c4c1a66c3" name="a684a7d485987e85f55ca5f7c4c1a66c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a684a7d485987e85f55ca5f7c4c1a66c3">&#9670;&#160;</a></span>EVT_ALIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVT_ALIVE&#160;&#160;&#160;0xF0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00054">54</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00363">On2ms()</a> y <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a80133f590ee16e8dece0c8e5b2db3163" name="a80133f590ee16e8dece0c8e5b2db3163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80133f590ee16e8dece0c8e5b2db3163">&#9670;&#160;</a></span>EVT_NEW_BOX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVT_NEW_BOX&#160;&#160;&#160;0x70   /* [type, servo, timeHi, timeLo]   */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00055">55</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00286">OnNewBox()</a>.</p>
+
+</div>
+</div>
+<a id="a8d9b12e6d2eafcbedb206cd958174fef" name="a8d9b12e6d2eafcbedb206cd958174fef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d9b12e6d2eafcbedb206cd958174fef">&#9670;&#160;</a></span>EVT_IR_SENSOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVT_IR_SENSOR&#160;&#160;&#160;0x71   /* [sensorNum, state]              */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00056">56</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a> y <a class="el" href="main_8c_source.html#l00329">ProcessIRSensors()</a>.</p>
+
+</div>
+</div>
+<a id="af25d925755e66f82d8e1785dc7e00694" name="af25d925755e66f82d8e1785dc7e00694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af25d925755e66f82d8e1785dc7e00694">&#9670;&#160;</a></span>EVT_SERVO_FIRED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVT_SERVO_FIRED&#160;&#160;&#160;0x72   /* [servoNum]                      */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00057">57</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00306">OnActuatorTrigger()</a>.</p>
+
+</div>
+</div>
+<a id="a1c2ab0868ffec546eca5126897f3067f" name="a1c2ab0868ffec546eca5126897f3067f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c2ab0868ffec546eca5126897f3067f">&#9670;&#160;</a></span>EVT_DISTANCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVT_DISTANCE&#160;&#160;&#160;0x74   /* [distHi, distLo]                */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00058">58</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+
+</div>
+</div>
+<a id="ad70bf4636cfe179baecb3e559cfd11bf" name="ad70bf4636cfe179baecb3e559cfd11bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70bf4636cfe179baecb3e559cfd11bf">&#9670;&#160;</a></span>EVT_CALIB_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EVT_CALIB_TIME&#160;&#160;&#160;0x75   /* [sensorNum, timeHi, timeLo]     */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_protocol_8h_source.html#l00059">59</a> del archivo <a class="el" href="_protocol_8h_source.html">Protocol.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00329">ProcessIRSensors()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_a71bf7082d0bc336a2dcaf2cce875bb7.html">CintaReal</a></li><li class="navelem"><a href="_protocol_8h.html">Protocol.h</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para Clasificador de Cajas - Firmware ATmega328P por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

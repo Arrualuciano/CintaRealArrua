@@ -1,0 +1,29 @@
+<map id="main.c" name="main.c">
+<area shape="rect" id="Node000001" title="Aplicacion principal del clasificador de cajas en cinta transportadora real." alt="" coords="311,5,372,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,70,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="310,29,85,82,84,77,312,24"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,80,195,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="309,33,194,77,192,72,313,29"/>
+<area shape="rect" id="Node000004" href="$_h_c_s_r04_8h.html" title="Driver para sensor ultrasonico HC&#45;SR04." alt="" coords="75,155,160,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="323,35,151,148,148,144,322,30"/>
+<area shape="rect" id="Node000006" href="$_comm_8h.html" title="Modulo de comunicacion serie con protocolo UNER." alt="" coords="270,80,341,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="337,31,321,68,317,64,333,34"/>
+<area shape="rect" id="Node000008" href="$_actuator_8h.html" title="Modulo de control de actuadores (pistones/brazos) de la cinta." alt="" coords="338,155,420,181"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="346,30,375,140,369,139,343,35"/>
+<area shape="rect" id="Node000009" href="$_classifier_8h.html" title="Clasificador de cajas para cinta transportadora (modo open&#45;loop)." alt="" coords="443,155,530,181"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="355,30,466,143,461,144,353,35"/>
+<area shape="rect" id="Node000010" href="$_servo_8h.html" title="Driver PWM por software para servomotores SG90." alt="" coords="555,155,621,181"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="363,30,557,146,552,147,362,35"/>
+<area shape="rect" id="Node000011" href="$_protocol_8h.html" title="Definiciones del protocolo de comunicacion entre MCU y HMI Qt." alt="" coords="593,80,674,107"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="372,25,581,77,576,79,372,30"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="347,229,411,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="161,179,334,227,330,230,160,184"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="280,106,255,124,233,141,221,160,221,170,225,180,247,202,274,218,304,228,335,237,329,237,302,233,272,223,243,206,221,183,216,171,216,159,229,138,251,119,275,109"/>
+<area shape="rect" id="Node000007" href="$_ring_buf_8h.html" title="Buffer circular (ring buffer) de proposito general." alt="" coords="235,155,314,181"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="302,105,288,142,284,138,298,109"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="294,179,351,220,346,220,292,184"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="381,180,381,215,377,212,377,184"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="471,181,412,223,409,218,465,183"/>
+<area shape="poly" id="edge14_Node000010_Node000005" title=" " alt="" coords="557,181,426,228,425,223,552,181"/>
+<area shape="poly" id="edge16_Node000011_Node000005" title=" " alt="" coords="639,105,647,143,645,164,636,183,622,195,601,205,546,221,484,232,427,240,426,234,483,227,545,216,599,200,619,190,631,180,640,162,641,143,636,109"/>
+</map>

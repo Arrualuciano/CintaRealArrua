@@ -1,0 +1,9 @@
+<map id="RingBuf.h" name="RingBuf.h">
+<area shape="rect" id="Node000001" title="Buffer circular (ring buffer) de proposito general." alt="" coords="45,5,125,32"/>
+<area shape="rect" id="Node000002" href="$_comm_8h.html" title="Modulo de comunicacion serie con protocolo UNER." alt="" coords="49,80,121,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,45,88,80,82,79,84,50"/>
+<area shape="rect" id="Node000003" href="$_comm_8c.html" title="Implementacion del modulo de comunicacion serie con protocolo UNER." alt="" coords="5,155,77,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="72,119,51,156,46,153,67,121"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title="Aplicacion principal del clasificador de cajas en cinta transportadora real." alt="" coords="100,155,160,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="102,118,125,154,120,154,100,122"/>
+</map>

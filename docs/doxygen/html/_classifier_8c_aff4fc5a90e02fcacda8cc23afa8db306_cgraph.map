@@ -1,0 +1,5 @@
+<map id="Classifier_Process" name="Classifier_Process">
+<area shape="rect" id="Node000001" title="Decrementa los timers de las cajas en transito y dispara los servos." alt="" coords="5,5,137,32"/>
+<area shape="rect" id="Node000002" href="$_classifier_8c.html#a2277e0160f98d9d708cc55885df459ce" title="Elimina la caja en la posicion idx desplazando las siguientes." alt="" coords="185,5,262,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,16,172,18,166,19,137,21"/>
+</map>

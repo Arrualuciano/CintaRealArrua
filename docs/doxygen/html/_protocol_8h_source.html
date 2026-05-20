@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Clasificador de Cajas - Firmware ATmega328P: Archivo de código fuente Protocol.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Clasificador de Cajas - Firmware ATmega328P<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Firmware para sistema de clasificacion de paquetes por altura en cinta transportadora</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_protocol_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Protocol.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_protocol_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file    Protocol.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief   Definiciones del protocolo de comunicacion entre MCU y HMI Qt.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @details Define los identificadores de comandos (Qt -&gt; MCU) y eventos</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *          (MCU -&gt; Qt) utilizados sobre el protocolo UNER.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *          Comandos (Qt -&gt; MCU):</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *          - CMD_ALIVE (0xF0):         heartbeat bidireccional.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *          - CMD_START (0x50):         iniciar clasificacion.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *          - CMD_STOP  (0x51):         detener clasificacion.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *          - CMD_RESET (0x53):         resetear sistema.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *          - CMD_SET_CONFIG (0x60):    configurar tipos de salida [tipo0, tipo1, tipo2].</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *          - CMD_SET_TIMES  (0x61):    configurar tiempo de arribo [servo, timeHi, timeLo].</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *          - CMD_SET_THRESHOLD (0x62): configurar umbrales de distancia [grande, mediana, pequena].</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *          - CMD_TEST_SERVO (0x63):    test manual de un servo [servoNum].</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *          - CMD_SET_SERVO_ANGLE (0x64): ajustar pulso de servo [servoNum, pulseTicks].</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *          - CMD_CALIB_MODE (0x65):    entrar/salir del modo calibracion [1=entrar, 0=salir].</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *          Eventos (MCU -&gt; Qt):</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *          - EVT_ALIVE (0xF0):        respuesta heartbeat.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *          - EVT_NEW_BOX (0x70):      nueva caja detectada [type, servo, timeHi, timeLo].</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *          - EVT_IR_SENSOR (0x71):    cambio de estado IR [sensorNum, state].</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *          - EVT_SERVO_FIRED (0x72):  servo disparado [servoNum].</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *          - EVT_DISTANCE (0x74):     distancia medida [distHi, distLo].</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *          - EVT_CALIB_TIME (0x75):   tiempo de calibracion [sensorNum, timeHi, timeLo].</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * @author  Luciano</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * @date    Mayo 2026</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#ifndef PROTOCOL_H_</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define PROTOCOL_H_</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">/* =========================================================================</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * Comandos Qt -&gt; MCU</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> * ====================================================================== */</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a739ebf2e17d2832f56069581a3a9a5d1">   40</a></span><span class="preprocessor">#define CMD_ALIVE            0xF0</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_protocol_8h.html#ab905e6aff2332984df0552c6b50203f2">   41</a></span><span class="preprocessor">#define CMD_START            0x50</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a46dc7ae84992bfe62cc00731959a67f4">   42</a></span><span class="preprocessor">#define CMD_STOP             0x51</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="_protocol_8h.html#afe1dd8546b0a8cd30b19a0229205c8df">   43</a></span><span class="preprocessor">#define CMD_RESET            0x53</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a8cec63f1c0d443c689128fa497bef22d">   44</a></span><span class="preprocessor">#define CMD_SET_CONFIG       0x60   </span><span class="comment">/* [tipo0, tipo1, tipo2]           */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a40a73a8a8d97236fdf4125a572851078">   45</a></span><span class="preprocessor">#define CMD_SET_TIMES        0x61   </span><span class="comment">/* [servo, timeHi, timeLo]         */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a0eb4f16c54756aee592cc282da0b9e63">   46</a></span><span class="preprocessor">#define CMD_SET_THRESHOLD    0x62   </span><span class="comment">/* [grande, mediana, pequena]      */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_protocol_8h.html#ae0d74311707c10853b0aa41ea5031c5b">   47</a></span><span class="preprocessor">#define CMD_TEST_SERVO       0x63   </span><span class="comment">/* [servoNum]                      */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a74f5a74888a3b9f396cbd3cc8dba4b9f">   48</a></span><span class="preprocessor">#define CMD_SET_SERVO_ANGLE  0x64   </span><span class="comment">/* [servoNum, pulseTicks]          */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a1f932ba09ec74fa627a8ac62e85ddd25">   49</a></span><span class="preprocessor">#define CMD_CALIB_MODE       0x65   </span><span class="comment">/* [1=entrar, 0=salir]             */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/* =========================================================================</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> * Eventos MCU -&gt; Qt</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> * ====================================================================== */</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a684a7d485987e85f55ca5f7c4c1a66c3">   54</a></span><span class="preprocessor">#define EVT_ALIVE            0xF0</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a80133f590ee16e8dece0c8e5b2db3163">   55</a></span><span class="preprocessor">#define EVT_NEW_BOX          0x70   </span><span class="comment">/* [type, servo, timeHi, timeLo]   */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a8d9b12e6d2eafcbedb206cd958174fef">   56</a></span><span class="preprocessor">#define EVT_IR_SENSOR        0x71   </span><span class="comment">/* [sensorNum, state]              */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_protocol_8h.html#af25d925755e66f82d8e1785dc7e00694">   57</a></span><span class="preprocessor">#define EVT_SERVO_FIRED      0x72   </span><span class="comment">/* [servoNum]                      */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="_protocol_8h.html#a1c2ab0868ffec546eca5126897f3067f">   58</a></span><span class="preprocessor">#define EVT_DISTANCE         0x74   </span><span class="comment">/* [distHi, distLo]                */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_protocol_8h.html#ad70bf4636cfe179baecb3e559cfd11bf">   59</a></span><span class="preprocessor">#define EVT_CALIB_TIME       0x75   </span><span class="comment">/* [sensorNum, timeHi, timeLo]     */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif </span><span class="comment">/* PROTOCOL_H_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_a71bf7082d0bc336a2dcaf2cce875bb7.html">CintaReal</a></li><li class="navelem"><a href="_protocol_8h.html">Protocol.h</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para Clasificador de Cajas - Firmware ATmega328P por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

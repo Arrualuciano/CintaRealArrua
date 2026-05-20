@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Clasificador de Cajas - Firmware ATmega328P: Referencia del archivo Classifier.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Clasificador de Cajas - Firmware ATmega328P<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Firmware para sistema de clasificacion de paquetes por altura en cinta transportadora</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_classifier_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo Classifier.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementacion del clasificador de cajas (modo open-loop).  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_classifier_8h_source.html">Classifier.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en Classifier.c:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_classifier_8c__incl.svg" width="140" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="_classifier_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a2277e0160f98d9d708cc55885df459ce" id="r_a2277e0160f98d9d708cc55885df459ce"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2277e0160f98d9d708cc55885df459ce">removeAt</a> (<a class="el" href="structclassifier__t.html">classifier_t</a> *clas, uint8_t idx)</td></tr>
+<tr class="memdesc:a2277e0160f98d9d708cc55885df459ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina la caja en la posicion <code class="param">idx</code> desplazando las siguientes.  <br /></td></tr>
+<tr class="memitem:a3093a58c1669eec3c79c5d89b01876e8" id="r_a3093a58c1669eec3c79c5d89b01876e8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3093a58c1669eec3c79c5d89b01876e8">Classifier_Init</a> (<a class="el" href="structclassifier__t.html">classifier_t</a> *clas, uint8_t *boxType, <a class="el" href="_classifier_8h.html#ae7de7564efbb3349cd91688f3df7e94e">classifier_trigger_cb</a> onTrigger)</td></tr>
+<tr class="memdesc:a3093a58c1669eec3c79c5d89b01876e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el clasificador con las asignaciones de salida.  <br /></td></tr>
+<tr class="memitem:a9c6e1aa223069277aeafe4c0b5c91f2a" id="r_a9c6e1aa223069277aeafe4c0b5c91f2a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9c6e1aa223069277aeafe4c0b5c91f2a">Classifier_Reset</a> (<a class="el" href="structclassifier__t.html">classifier_t</a> *clas)</td></tr>
+<tr class="memdesc:a9c6e1aa223069277aeafe4c0b5c91f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vacia la lista de cajas en transito sin modificar la configuracion.  <br /></td></tr>
+<tr class="memitem:a6bc38faab18ac29b750ae7607058a19c" id="r_a6bc38faab18ac29b750ae7607058a19c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6bc38faab18ac29b750ae7607058a19c">Classifier_NewBox</a> (<a class="el" href="structclassifier__t.html">classifier_t</a> *clas, uint8_t type)</td></tr>
+<tr class="memdesc:a6bc38faab18ac29b750ae7607058a19c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra una nueva caja medida por el HC-SR04.  <br /></td></tr>
+<tr class="memitem:aff4fc5a90e02fcacda8cc23afa8db306" id="r_aff4fc5a90e02fcacda8cc23afa8db306"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aff4fc5a90e02fcacda8cc23afa8db306">Classifier_Process</a> (<a class="el" href="structclassifier__t.html">classifier_t</a> *clas)</td></tr>
+<tr class="memdesc:aff4fc5a90e02fcacda8cc23afa8db306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrementa los timers de las cajas en transito y dispara los servos.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementacion del clasificador de cajas (modo open-loop). </p>
+<p>Cada caja medida recibe un servo destino y un timer de arribo. <a class="el" href="#aff4fc5a90e02fcacda8cc23afa8db306" title="Decrementa los timers de las cajas en transito y dispara los servos.">Classifier_Process()</a> decrementa los timers cada 2 ms y dispara el servo cuando el timer llega a cero.</p>
+<p>Invariantes de la lista:</p><ul>
+<li>Las cajas estan ordenadas por orden de llegada (la mas antigua en list[0]).</li>
+<li>Una caja se elimina cuando su timer expira y el servo es disparado.</li>
+</ul>
+<dl class="section author"><dt>Autor</dt><dd>Luciano </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Mayo 2026 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="_classifier_8c_source.html">Classifier.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a2277e0160f98d9d708cc55885df459ce" name="a2277e0160f98d9d708cc55885df459ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2277e0160f98d9d708cc55885df459ce">&#9670;&#160;</a></span>removeAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structclassifier__t.html">classifier_t</a> *</td>          <td class="paramname"><span class="paramname"><em>clas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>idx</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Elimina la caja en la posicion <code class="param">idx</code> desplazando las siguientes. </p>
+<p>Operacion O(n). Mantiene el orden de llegada de las cajas restantes.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clas</td><td>Puntero al clasificador. </td></tr>
+    <tr><td class="paramname">idx</td><td>Indice (0-based) de la caja a eliminar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_classifier_8c_source.html#l00028">28</a> del archivo <a class="el" href="_classifier_8c_source.html">Classifier.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_classifier_8h_source.html#l00059">classifier_t::count</a> y <a class="el" href="_classifier_8h_source.html#l00058">classifier_t::list</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_classifier_8c_source.html#l00107">Classifier_Process()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_classifier_8c_a2277e0160f98d9d708cc55885df459ce_icgraph.svg" width="366" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a3093a58c1669eec3c79c5d89b01876e8" name="a3093a58c1669eec3c79c5d89b01876e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3093a58c1669eec3c79c5d89b01876e8">&#9670;&#160;</a></span>Classifier_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Classifier_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structclassifier__t.html">classifier_t</a> *</td>          <td class="paramname"><span class="paramname"><em>clas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>boxType</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_classifier_8h.html#ae7de7564efbb3349cd91688f3df7e94e">classifier_trigger_cb</a></td>          <td class="paramname"><span class="paramname"><em>onTrigger</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el clasificador con las asignaciones de salida. </p>
+<p>Resetea la lista de cajas en transito, guarda los tipos asignados a cada salida, el callback de disparo, y configura los tiempos de arribo por defecto para cada servo.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clas</td><td>Puntero al clasificador a inicializar. </td></tr>
+    <tr><td class="paramname">boxType</td><td>Arreglo de CLASSIFIER_NUM_SENSORS elementos con el tipo de caja correspondiente a cada salida (ej: {6, 8, 10}). </td></tr>
+    <tr><td class="paramname">onTrigger</td><td>Callback que sera invocado cuando se deba disparar un actuador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_classifier_8c_source.html#l00052">52</a> del archivo <a class="el" href="_classifier_8c_source.html">Classifier.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_classifier_8h_source.html#l00060">classifier_t::boxType</a>, <a class="el" href="_classifier_8h_source.html#l00030">CLASSIFIER_NUM_SENSORS</a>, <a class="el" href="_classifier_8h_source.html#l00059">classifier_t::count</a>, <a class="el" href="_classifier_8h_source.html#l00061">classifier_t::onTrigger</a>, <a class="el" href="_classifier_8h_source.html#l00032">TIME_ARRIVAL_SERVO0</a>, <a class="el" href="_classifier_8h_source.html#l00033">TIME_ARRIVAL_SERVO1</a>, <a class="el" href="_classifier_8h_source.html#l00034">TIME_ARRIVAL_SERVO2</a> y <a class="el" href="_classifier_8h_source.html#l00062">classifier_t::timeArrival</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_classifier_8c_a3093a58c1669eec3c79c5d89b01876e8_icgraph.svg" width="210" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a9c6e1aa223069277aeafe4c0b5c91f2a" name="a9c6e1aa223069277aeafe4c0b5c91f2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c6e1aa223069277aeafe4c0b5c91f2a">&#9670;&#160;</a></span>Classifier_Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Classifier_Reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structclassifier__t.html">classifier_t</a> *</td>          <td class="paramname"><span class="paramname"><em>clas</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vacia la lista de cajas en transito sin modificar la configuracion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clas</td><td>Puntero al clasificador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_classifier_8c_source.html#l00067">67</a> del archivo <a class="el" href="_classifier_8c_source.html">Classifier.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_classifier_8h_source.html#l00059">classifier_t::count</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_classifier_8c_a9c6e1aa223069277aeafe4c0b5c91f2a_icgraph.svg" width="380" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a6bc38faab18ac29b750ae7607058a19c" name="a6bc38faab18ac29b750ae7607058a19c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc38faab18ac29b750ae7607058a19c">&#9670;&#160;</a></span>Classifier_NewBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Classifier_NewBox </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structclassifier__t.html">classifier_t</a> *</td>          <td class="paramname"><span class="paramname"><em>clas</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registra una nueva caja medida por el HC-SR04. </p>
+<p>Busca en boxType[] a que servo corresponde el tipo de caja, carga el timer de arribo configurado y agrega la caja a la lista. Si la lista esta llena o el tipo no coincide con ninguna salida, la caja se descarta silenciosamente.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clas</td><td>Puntero al clasificador. </td></tr>
+    <tr><td class="paramname">type</td><td>Tipo de caja (altura en cm: 6, 8 o 10). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_classifier_8c_source.html#l00082">82</a> del archivo <a class="el" href="_classifier_8c_source.html">Classifier.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_classifier_8h_source.html#l00060">classifier_t::boxType</a>, <a class="el" href="_classifier_8h_source.html#l00027">CLASSIFIER_MAX_BOXES</a>, <a class="el" href="_classifier_8h_source.html#l00030">CLASSIFIER_NUM_SENSORS</a>, <a class="el" href="_classifier_8h_source.html#l00059">classifier_t::count</a>, <a class="el" href="_classifier_8h_source.html#l00058">classifier_t::list</a>, <a class="el" href="_classifier_8h_source.html#l00049">classifier_box_t::servo</a>, <a class="el" href="_classifier_8h_source.html#l00062">classifier_t::timeArrival</a>, <a class="el" href="_classifier_8h_source.html#l00050">classifier_box_t::timePushBox</a> y <a class="el" href="_classifier_8h_source.html#l00048">classifier_box_t::type</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00286">OnNewBox()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_classifier_8c_a6bc38faab18ac29b750ae7607058a19c_icgraph.svg" width="378" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aff4fc5a90e02fcacda8cc23afa8db306" name="aff4fc5a90e02fcacda8cc23afa8db306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff4fc5a90e02fcacda8cc23afa8db306">&#9670;&#160;</a></span>Classifier_Process()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Classifier_Process </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structclassifier__t.html">classifier_t</a> *</td>          <td class="paramname"><span class="paramname"><em>clas</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrementa los timers de las cajas en transito y dispara los servos. </p>
+<p>Debe llamarse cada 2 ms desde el tick del Timer0. Recorre la lista de cajas, decrementa timePushBox y al llegar a 0 invoca onTrigger() con el servo correspondiente. La caja disparada se elimina de la lista.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">clas</td><td>Puntero al clasificador. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_classifier_8c_source.html#l00107">107</a> del archivo <a class="el" href="_classifier_8c_source.html">Classifier.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_classifier_8h_source.html#l00059">classifier_t::count</a>, <a class="el" href="_classifier_8h_source.html#l00058">classifier_t::list</a>, <a class="el" href="_classifier_8h_source.html#l00061">classifier_t::onTrigger</a>, <a class="el" href="_classifier_8c_source.html#l00028">removeAt()</a>, <a class="el" href="_classifier_8h_source.html#l00049">classifier_box_t::servo</a> y <a class="el" href="_classifier_8h_source.html#l00050">classifier_box_t::timePushBox</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_classifier_8c_aff4fc5a90e02fcacda8cc23afa8db306_cgraph.svg" width="268" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="_classifier_8c_aff4fc5a90e02fcacda8cc23afa8db306_icgraph.svg" width="240" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_a71bf7082d0bc336a2dcaf2cce875bb7.html">CintaReal</a></li><li class="navelem"><a href="_classifier_8c.html">Classifier.c</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para Clasificador de Cajas - Firmware ATmega328P por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<map id="On2ms" name="On2ms">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,69,32"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a2bec24fbf70e6bfc572847a7d417a1e4" title="Envia un evento al HMI Qt via protocolo UNER." alt="" coords="117,5,202,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,16,103,18,98,19,69,21"/>
+<area shape="rect" id="Node000003" href="$_comm_8c.html#ae71d12e317420e00d9c2ce5f67ecf640" title="Encola una trama UNER en el buffer de transmision." alt="" coords="250,5,347,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="202,16,237,19,232,19,202,21"/>
+<area shape="rect" id="Node000004" href="$_comm_8c.html#ae2ccc0b50360e3c4a2ee0c5bd8c5960c" title="Escribe un byte en el buffer circular de transmision." alt="" coords="395,5,477,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="348,16,383,19,377,19,348,21"/>
+</map>

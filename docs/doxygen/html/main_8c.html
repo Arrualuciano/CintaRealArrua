@@ -1,0 +1,1343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Clasificador de Cajas - Firmware ATmega328P: Referencia del archivo main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Clasificador de Cajas - Firmware ATmega328P<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Firmware para sistema de clasificacion de paquetes por altura en cinta transportadora</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('main_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo main.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Aplicacion principal del clasificador de cajas en cinta transportadora real.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
+<code>#include &lt;avr/interrupt.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_h_c_s_r04_8h_source.html">HCSR04.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_comm_8h_source.html">Comm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_actuator_8h_source.html">Actuator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_classifier_8h_source.html">Classifier.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_servo_8h_source.html">Servo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_protocol_8h_source.html">Protocol.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependencias incluidas en main.c:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c__incl.svg" width="100%" height="496"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+</div>
+<p><a href="main_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a43bafb28b29491ec7f871319b5a3b2f8" id="r_a43bafb28b29491ec7f871319b5a3b2f8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a43bafb28b29491ec7f871319b5a3b2f8">F_CPU</a>&#160;&#160;&#160;16000000u</td></tr>
+<tr class="memitem:ae0b5150c74ed1883c717c53eaa42cc76" id="r_ae0b5150c74ed1883c717c53eaa42cc76"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ae0b5150c74ed1883c717c53eaa42cc76">S0_DEBOUNCE_TICKS</a>&#160;&#160;&#160;250   /* 500 ms */</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a39df72021aa8833b4e223b3350758fec" id="r_a39df72021aa8833b4e223b3350758fec"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a39df72021aa8833b4e223b3350758fec">InitTMR0</a> (void)</td></tr>
+<tr class="memitem:ab1fcec07bcf17b4f6a902b7077d93740" id="r_ab1fcec07bcf17b4f6a902b7077d93740"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab1fcec07bcf17b4f6a902b7077d93740">InitTMR1</a> (void)</td></tr>
+<tr class="memitem:a511c6364f4cb08ab4ff1b2a53d626544" id="r_a511c6364f4cb08ab4ff1b2a53d626544"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a511c6364f4cb08ab4ff1b2a53d626544">On2ms</a> (void)</td></tr>
+<tr class="memitem:a217dab4dd6921f2f3f87d4dbe33e3bd0" id="r_a217dab4dd6921f2f3f87d4dbe33e3bd0"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a217dab4dd6921f2f3f87d4dbe33e3bd0">hw_trigger_write</a> (uint8_t state)</td></tr>
+<tr class="memitem:ae9fce17c73c40d30a50ba0e8fd6767cb" id="r_ae9fce17c73c40d30a50ba0e8fd6767cb"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#ae9fce17c73c40d30a50ba0e8fd6767cb">hw_echo_read</a> (void)</td></tr>
+<tr class="memitem:a81935c956660806200cde0f5f937e11d" id="r_a81935c956660806200cde0f5f937e11d"><td class="memItemLeft">static uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a81935c956660806200cde0f5f937e11d">hw_get_us</a> (void)</td></tr>
+<tr class="memitem:a0dc9b955fb9b7e24a7c87f98f363b981" id="r_a0dc9b955fb9b7e24a7c87f98f363b981"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0dc9b955fb9b7e24a7c87f98f363b981">hw_Act_Set</a> (uint8_t armNum, uint8_t state)</td></tr>
+<tr class="memdesc:a0dc9b955fb9b7e24a7c87f98f363b981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controla un actuador: mueve el servo fisico.  <br /></td></tr>
+<tr class="memitem:a93e1ae40572a89c84a414b44cea20014" id="r_a93e1ae40572a89c84a414b44cea20014"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a93e1ae40572a89c84a414b44cea20014">OnCommCmd</a> (uint8_t cmdId, uint8_t *payload, uint8_t nBytes)</td></tr>
+<tr class="memdesc:a93e1ae40572a89c84a414b44cea20014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Despacha comandos recibidos via protocolo UNER desde el HMI.  <br /></td></tr>
+<tr class="memitem:a86b74d914b1f6afb62d8bd1e4e31d166" id="r_a86b74d914b1f6afb62d8bd1e4e31d166"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a86b74d914b1f6afb62d8bd1e4e31d166">OnNewBox</a> (uint8_t boxType)</td></tr>
+<tr class="memdesc:a86b74d914b1f6afb62d8bd1e4e31d166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra una nueva caja y envia el evento al HMI.  <br /></td></tr>
+<tr class="memitem:ae20a66bc6fe10fe702f4b3f2922c52d8" id="r_ae20a66bc6fe10fe702f4b3f2922c52d8"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#ae20a66bc6fe10fe702f4b3f2922c52d8">OnActuatorTrigger</a> (uint8_t outNum)</td></tr>
+<tr class="memdesc:ae20a66bc6fe10fe702f4b3f2922c52d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback del clasificador: solicita el disparo del actuador y notifica al HMI.  <br /></td></tr>
+<tr class="memitem:a2bec24fbf70e6bfc572847a7d417a1e4" id="r_a2bec24fbf70e6bfc572847a7d417a1e4"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2bec24fbf70e6bfc572847a7d417a1e4">SendEvent</a> (uint8_t evtId, uint8_t *data, uint8_t nBytes)</td></tr>
+<tr class="memdesc:a2bec24fbf70e6bfc572847a7d417a1e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envia un evento al HMI Qt via protocolo UNER.  <br /></td></tr>
+<tr class="memitem:ac791cf6e6329387043b6bc9441a4e86b" id="r_ac791cf6e6329387043b6bc9441a4e86b"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac791cf6e6329387043b6bc9441a4e86b">ProcessIRSensors</a> (void)</td></tr>
+<tr class="memdesc:ac791cf6e6329387043b6bc9441a4e86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee los sensores IR S1 (PD2, pin 2), S2 (PD3, pin 3), S3 (PD4, pin 4) y envia eventos al HMI al detectar cambios de estado.  <br /></td></tr>
+<tr class="memitem:aec43762dc86e029b395d4e5819192c2d" id="r_aec43762dc86e029b395d4e5819192c2d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aec43762dc86e029b395d4e5819192c2d">ISR</a> (TIMER0_COMPA_vect)</td></tr>
+<tr class="memitem:a09ce999e15ad60b8a3f07d08af1946f9" id="r_a09ce999e15ad60b8a3f07d08af1946f9"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a09ce999e15ad60b8a3f07d08af1946f9">ISR</a> (USART_RX_vect)</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a444f551736a945b391c441f057a10879" id="r_a444f551736a945b391c441f057a10879"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a444f551736a945b391c441f057a10879">threshGrande</a> = 12</td></tr>
+<tr class="memitem:a7b3ec0fe6fc332dc894f87d4c14144e9" id="r_a7b3ec0fe6fc332dc894f87d4c14144e9"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a7b3ec0fe6fc332dc894f87d4c14144e9">threshMediana</a> = 14</td></tr>
+<tr class="memitem:a436575400cb43ced30c57e5e3101aa37" id="r_a436575400cb43ced30c57e5e3101aa37"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a436575400cb43ced30c57e5e3101aa37">threshPequena</a> = 17</td></tr>
+<tr class="memitem:a39065763dfb9f455b6daf34d92516ba4" id="r_a39065763dfb9f455b6daf34d92516ba4"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a39065763dfb9f455b6daf34d92516ba4">time100ms</a></td></tr>
+<tr class="memitem:ad7787e69c284986b9c6114cda187cb0e" id="r_ad7787e69c284986b9c6114cda187cb0e"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#ad7787e69c284986b9c6114cda187cb0e">s0Prev</a> = 0</td></tr>
+<tr class="memitem:acfe328d98b369849f41eee3801ba5a85" id="r_acfe328d98b369849f41eee3801ba5a85"><td class="memItemLeft">static <a class="el" href="struct_h_c_s_r04___setting__t.html">HCSR04_Setting_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#acfe328d98b369849f41eee3801ba5a85">sensor</a></td></tr>
+<tr class="memitem:a646bb5022098979b02176841374ae3e7" id="r_a646bb5022098979b02176841374ae3e7"><td class="memItemLeft">static <a class="el" href="struct_comm___protocol.html">Comm_Protocol</a>&#160;</td><td class="memItemRight"><a class="el" href="#a646bb5022098979b02176841374ae3e7">comm</a></td></tr>
+<tr class="memitem:aa53811047b4b4e429c5023a66cb9b4a4" id="r_aa53811047b4b4e429c5023a66cb9b4a4"><td class="memItemLeft">static <a class="el" href="struct_actuator__t.html">Actuator_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa53811047b4b4e429c5023a66cb9b4a4">act0</a></td></tr>
+<tr class="memitem:ac84a626532edc6b7062d2e0b9527b798" id="r_ac84a626532edc6b7062d2e0b9527b798"><td class="memItemLeft">static <a class="el" href="struct_actuator__t.html">Actuator_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac84a626532edc6b7062d2e0b9527b798">act1</a></td></tr>
+<tr class="memitem:abbea892f447c96e6bbfd32555d8ac10d" id="r_abbea892f447c96e6bbfd32555d8ac10d"><td class="memItemLeft">static <a class="el" href="struct_actuator__t.html">Actuator_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#abbea892f447c96e6bbfd32555d8ac10d">act2</a></td></tr>
+<tr class="memitem:a46dd3c09226bc8dd225072b95624dabd" id="r_a46dd3c09226bc8dd225072b95624dabd"><td class="memItemLeft">static <a class="el" href="structclassifier__t.html">classifier_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a46dd3c09226bc8dd225072b95624dabd">classifier</a></td></tr>
+<tr class="memitem:aaaf161fb032b93f4611c126340d14bb5" id="r_aaaf161fb032b93f4611c126340d14bb5"><td class="memItemLeft">static <a class="el" href="struct_actuator__t.html">Actuator_t</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aaaf161fb032b93f4611c126340d14bb5">actuators</a> [3]</td></tr>
+<tr class="memitem:af4efa723d1dc9c4a5e628b6978ed01fd" id="r_af4efa723d1dc9c4a5e628b6978ed01fd"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#af4efa723d1dc9c4a5e628b6978ed01fd">beltRunning</a> = 0</td></tr>
+<tr class="memitem:a41b7d8ae4187b57317a4ca0a6bed2a3d" id="r_a41b7d8ae4187b57317a4ca0a6bed2a3d"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a41b7d8ae4187b57317a4ca0a6bed2a3d">calibMode</a> = 0</td></tr>
+<tr class="memitem:a5f32ee1cc79e9b644ec7be56a1594d50" id="r_a5f32ee1cc79e9b644ec7be56a1594d50"><td class="memItemLeft">static uint16_t&#160;</td><td class="memItemRight"><a class="el" href="#a5f32ee1cc79e9b644ec7be56a1594d50">calibTickCounter</a> = 0</td></tr>
+<tr class="memitem:a2a424e3709010d7bd2b22790bb87ce23" id="r_a2a424e3709010d7bd2b22790bb87ce23"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a2a424e3709010d7bd2b22790bb87ce23">calibSent</a> [3] = {0, 0, 0}</td></tr>
+<tr class="memitem:ae5e715d053904e7b14caeb8653250598" id="r_ae5e715d053904e7b14caeb8653250598"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#ae5e715d053904e7b14caeb8653250598">irPrev</a> [3] = {0, 0, 0}</td></tr>
+<tr class="memitem:ae6d19b8a9bda31e0ce6e390737c9d3f9" id="r_ae6d19b8a9bda31e0ce6e390737c9d3f9"><td class="memItemLeft">static uint16_t&#160;</td><td class="memItemRight"><a class="el" href="#ae6d19b8a9bda31e0ce6e390737c9d3f9">s0Debounce</a> = 0</td></tr>
+<tr class="memitem:a5b3fdc86390d111506b053d06fcbff95" id="r_a5b3fdc86390d111506b053d06fcbff95"><td class="memItemLeft">static uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a5b3fdc86390d111506b053d06fcbff95">aliveCounter</a> = 0</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Aplicacion principal del clasificador de cajas en cinta transportadora real. </p>
+<p>Integra los modulos Comm, Actuator, Classifier, HCSR04 y Servo sobre un ATmega328P a 16 MHz.</p>
+<p>Arquitectura de tiempo:</p><ul>
+<li>Timer0 (prescaler 256): tick de 2 ms para FSMs y clasificador.</li>
+<li>Timer1 (prescaler 8, free-running): base de tiempo en us para HC-SR04.</li>
+<li>Timer2 (prescaler 64, CTC): PWM de 50 Hz para servomotores SG90.</li>
+</ul>
+<p>Pinout (segun consigna):</p><ul>
+<li>PB1: TRIGGER HC-SR04 (salida)</li>
+<li>PB2: ECHO HC-SR04 (entrada)</li>
+<li>PB3: SERVO 2 (salida)</li>
+<li>PB4: SERVO 3 (salida)</li>
+<li>PB5: LED heartbeat (salida)</li>
+<li>PD5: IR sensor S0 - trigger zona medicion (entrada, pin 5)</li>
+<li>PD2: IR sensor S1 - salida 0 (entrada, pin 2)</li>
+<li>PD3: IR sensor S2 - salida 1 (entrada, pin 3)</li>
+<li>PD4: IR sensor S3 - salida 2 (entrada, pin 4)</li>
+<li>PC0: control de cinta transportadora (salida, activo-bajo)</li>
+<li>PD7: SERVO 1 (salida)</li>
+<li>USART0: comunicacion serie con HMI Qt (115200 baud, 8N1)</li>
+</ul>
+<p>Modos de operacion:</p><ul>
+<li>Normal (open-loop): S0 -&gt; HC-SR04 -&gt; Classifier -&gt; Actuator.</li>
+<li>Calibracion: actuadores deshabilitados, mide tiempos S0-&gt;S1/S2/S3.</li>
+</ul>
+<dl class="section author"><dt>Autor</dt><dd>Luciano </dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>Mayo 2026 </dd></dl>
+
+<p class="definition">Definición en el archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a43bafb28b29491ec7f871319b5a3b2f8" name="a43bafb28b29491ec7f871319b5a3b2f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43bafb28b29491ec7f871319b5a3b2f8">&#9670;&#160;</a></span>F_CPU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define F_CPU&#160;&#160;&#160;16000000u</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00035">35</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="ae0b5150c74ed1883c717c53eaa42cc76" name="ae0b5150c74ed1883c717c53eaa42cc76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b5150c74ed1883c717c53eaa42cc76">&#9670;&#160;</a></span>S0_DEBOUNCE_TICKS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define S0_DEBOUNCE_TICKS&#160;&#160;&#160;250   /* 500 ms */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Debounce de S0 en ticks de 2 ms: evita detecciones multiples por rebote. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00105">105</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a39df72021aa8833b4e223b3350758fec" name="a39df72021aa8833b4e223b3350758fec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39df72021aa8833b4e223b3350758fec">&#9670;&#160;</a></span>InitTMR0()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InitTMR0 </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Timer0: tick de 2 ms (prescaler 256, CTC libre). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00129">129</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a39df72021aa8833b4e223b3350758fec_icgraph.svg" width="184" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab1fcec07bcf17b4f6a902b7077d93740" name="ab1fcec07bcf17b4f6a902b7077d93740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1fcec07bcf17b4f6a902b7077d93740">&#9670;&#160;</a></span>InitTMR1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InitTMR1 </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Timer1: free-running a 2 MHz (prescaler 8) para HC-SR04. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00138">138</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_ab1fcec07bcf17b4f6a902b7077d93740_icgraph.svg" width="184" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a511c6364f4cb08ab4ff1b2a53d626544" name="a511c6364f4cb08ab4ff1b2a53d626544"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a511c6364f4cb08ab4ff1b2a53d626544">&#9670;&#160;</a></span>On2ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void On2ms </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tarea de 2 ms: heartbeat LED, alive al HMI, contador de calibracion. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00363">363</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="main_8c_source.html#l00109">aliveCounter</a>, <a class="el" href="main_8c_source.html#l00093">calibMode</a>, <a class="el" href="main_8c_source.html#l00096">calibTickCounter</a>, <a class="el" href="_protocol_8h_source.html#l00054">EVT_ALIVE</a>, <a class="el" href="main_8c_source.html#l00106">s0Debounce</a>, <a class="el" href="main_8c_source.html#l00182">SendEvent()</a> y <a class="el" href="main_8c_source.html#l00080">time100ms</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a511c6364f4cb08ab4ff1b2a53d626544_cgraph.svg" width="483" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a511c6364f4cb08ab4ff1b2a53d626544_icgraph.svg" width="172" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a217dab4dd6921f2f3f87d4dbe33e3bd0" name="a217dab4dd6921f2f3f87d4dbe33e3bd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a217dab4dd6921f2f3f87d4dbe33e3bd0">&#9670;&#160;</a></span>hw_trigger_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hw_trigger_write </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Controla el pin TRIGGER del HC-SR04 (PB1). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00148">148</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a217dab4dd6921f2f3f87d4dbe33e3bd0_icgraph.svg" width="224" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ae9fce17c73c40d30a50ba0e8fd6767cb" name="ae9fce17c73c40d30a50ba0e8fd6767cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9fce17c73c40d30a50ba0e8fd6767cb">&#9670;&#160;</a></span>hw_echo_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t hw_echo_read </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Lee el pin ECHO del HC-SR04 (PB2). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00154">154</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_ae9fce17c73c40d30a50ba0e8fd6767cb_icgraph.svg" width="214" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a81935c956660806200cde0f5f937e11d" name="a81935c956660806200cde0f5f937e11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81935c956660806200cde0f5f937e11d">&#9670;&#160;</a></span>hw_get_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t hw_get_us </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna el tiempo actual en microsegundos (TCNT1 / 2). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00159">159</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a81935c956660806200cde0f5f937e11d_icgraph.svg" width="192" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a0dc9b955fb9b7e24a7c87f98f363b981" name="a0dc9b955fb9b7e24a7c87f98f363b981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc9b955fb9b7e24a7c87f98f363b981">&#9670;&#160;</a></span>hw_Act_Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hw_Act_Set </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>armNum</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Controla un actuador: mueve el servo fisico. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">armNum</td><td>Numero de servo (0, 1 o 2). </td></tr>
+    <tr><td class="paramname">state</td><td>1 = extender, 0 = retraer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00168">168</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_servo_8c_source.html#l00074">Servo_SetPosition()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a0dc9b955fb9b7e24a7c87f98f363b981_cgraph.svg" width="280" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a0dc9b955fb9b7e24a7c87f98f363b981_icgraph.svg" width="200" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a93e1ae40572a89c84a414b44cea20014" name="a93e1ae40572a89c84a414b44cea20014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e1ae40572a89c84a414b44cea20014">&#9670;&#160;</a></span>OnCommCmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OnCommCmd </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>cmdId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>payload</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>nBytes</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Despacha comandos recibidos via protocolo UNER desde el HMI. </p>
+<p>Soporta todos los comandos definidos en <a class="el" href="_protocol_8h.html" title="Definiciones del protocolo de comunicacion entre MCU y HMI Qt.">Protocol.h</a>. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00195">195</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_actuator_8c_source.html#l00033">Actuator_Trigger()</a>, <a class="el" href="main_8c_source.html#l00087">actuators</a>, <a class="el" href="main_8c_source.html#l00090">beltRunning</a>, <a class="el" href="main_8c_source.html#l00093">calibMode</a>, <a class="el" href="main_8c_source.html#l00099">calibSent</a>, <a class="el" href="main_8c_source.html#l00096">calibTickCounter</a>, <a class="el" href="main_8c_source.html#l00086">classifier</a>, <a class="el" href="_classifier_8c_source.html#l00067">Classifier_Reset()</a>, <a class="el" href="_protocol_8h_source.html#l00040">CMD_ALIVE</a>, <a class="el" href="_protocol_8h_source.html#l00049">CMD_CALIB_MODE</a>, <a class="el" href="_protocol_8h_source.html#l00043">CMD_RESET</a>, <a class="el" href="_protocol_8h_source.html#l00044">CMD_SET_CONFIG</a>, <a class="el" href="_protocol_8h_source.html#l00048">CMD_SET_SERVO_ANGLE</a>, <a class="el" href="_protocol_8h_source.html#l00046">CMD_SET_THRESHOLD</a>, <a class="el" href="_protocol_8h_source.html#l00045">CMD_SET_TIMES</a>, <a class="el" href="_protocol_8h_source.html#l00041">CMD_START</a>, <a class="el" href="_protocol_8h_source.html#l00042">CMD_STOP</a>, <a class="el" href="_protocol_8h_source.html#l00047">CMD_TEST_SERVO</a>, <a class="el" href="_protocol_8h_source.html#l00054">EVT_ALIVE</a>, <a class="el" href="main_8c_source.html#l00182">SendEvent()</a>, <a class="el" href="_servo_8c_source.html#l00079">Servo_SetPulse()</a>, <a class="el" href="main_8c_source.html#l00053">threshGrande</a>, <a class="el" href="main_8c_source.html#l00054">threshMediana</a> y <a class="el" href="main_8c_source.html#l00055">threshPequena</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a93e1ae40572a89c84a414b44cea20014_cgraph.svg" width="558" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a93e1ae40572a89c84a414b44cea20014_icgraph.svg" width="214" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a86b74d914b1f6afb62d8bd1e4e31d166" name="a86b74d914b1f6afb62d8bd1e4e31d166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b74d914b1f6afb62d8bd1e4e31d166">&#9670;&#160;</a></span>OnNewBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OnNewBox </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>boxType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registra una nueva caja y envia el evento al HMI. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boxType</td><td>Tipo de caja en cm (6, 8 o 10). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00286">286</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="main_8c_source.html#l00086">classifier</a>, <a class="el" href="_classifier_8c_source.html#l00082">Classifier_NewBox()</a>, <a class="el" href="_protocol_8h_source.html#l00055">EVT_NEW_BOX</a> y <a class="el" href="main_8c_source.html#l00182">SendEvent()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a86b74d914b1f6afb62d8bd1e4e31d166_cgraph.svg" width="555" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a86b74d914b1f6afb62d8bd1e4e31d166_icgraph.svg" width="196" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ae20a66bc6fe10fe702f4b3f2922c52d8" name="ae20a66bc6fe10fe702f4b3f2922c52d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20a66bc6fe10fe702f4b3f2922c52d8">&#9670;&#160;</a></span>OnActuatorTrigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t OnActuatorTrigger </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>outNum</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback del clasificador: solicita el disparo del actuador y notifica al HMI. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00306">306</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_actuator_8c_source.html#l00033">Actuator_Trigger()</a>, <a class="el" href="main_8c_source.html#l00087">actuators</a>, <a class="el" href="_protocol_8h_source.html#l00057">EVT_SERVO_FIRED</a> y <a class="el" href="main_8c_source.html#l00182">SendEvent()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_ae20a66bc6fe10fe702f4b3f2922c52d8_cgraph.svg" width="579" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_ae20a66bc6fe10fe702f4b3f2922c52d8_icgraph.svg" width="236" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a2bec24fbf70e6bfc572847a7d417a1e4" name="a2bec24fbf70e6bfc572847a7d417a1e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bec24fbf70e6bfc572847a7d417a1e4">&#9670;&#160;</a></span>SendEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendEvent </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>evtId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>nBytes</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Envia un evento al HMI Qt via protocolo UNER. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evtId</td><td>Identificador del evento. </td></tr>
+    <tr><td class="paramname">data</td><td>Puntero a los datos del evento (puede ser NULL). </td></tr>
+    <tr><td class="paramname">nBytes</td><td>Cantidad de bytes de datos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00182">182</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="main_8c_source.html#l00084">comm</a> y <a class="el" href="_comm_8c_source.html#l00104">Comm_Send()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>, <a class="el" href="main_8c_source.html#l00363">On2ms()</a>, <a class="el" href="main_8c_source.html#l00306">OnActuatorTrigger()</a>, <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>, <a class="el" href="main_8c_source.html#l00286">OnNewBox()</a> y <a class="el" href="main_8c_source.html#l00329">ProcessIRSensors()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a2bec24fbf70e6bfc572847a7d417a1e4_cgraph.svg" width="371" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a2bec24fbf70e6bfc572847a7d417a1e4_icgraph.svg" width="374" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ac791cf6e6329387043b6bc9441a4e86b" name="ac791cf6e6329387043b6bc9441a4e86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac791cf6e6329387043b6bc9441a4e86b">&#9670;&#160;</a></span>ProcessIRSensors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProcessIRSensors </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lee los sensores IR S1 (PD2, pin 2), S2 (PD3, pin 3), S3 (PD4, pin 4) y envia eventos al HMI al detectar cambios de estado. </p>
+<p>En modo calibracion, al detectar flanco de subida de un sensor se envia el tiempo transcurrido desde S0 como EVT_CALIB_TIME. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00329">329</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="main_8c_source.html#l00093">calibMode</a>, <a class="el" href="main_8c_source.html#l00099">calibSent</a>, <a class="el" href="main_8c_source.html#l00096">calibTickCounter</a>, <a class="el" href="_protocol_8h_source.html#l00059">EVT_CALIB_TIME</a>, <a class="el" href="_protocol_8h_source.html#l00056">EVT_IR_SENSOR</a>, <a class="el" href="main_8c_source.html#l00102">irPrev</a> y <a class="el" href="main_8c_source.html#l00182">SendEvent()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_ac791cf6e6329387043b6bc9441a4e86b_cgraph.svg" width="551" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_ac791cf6e6329387043b6bc9441a4e86b_icgraph.svg" width="240" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aec43762dc86e029b395d4e5819192c2d" name="aec43762dc86e029b395d4e5819192c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec43762dc86e029b395d4e5819192c2d">&#9670;&#160;</a></span>ISR() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">TIMER0_COMPA_vect</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00115">115</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+</div>
+</div>
+<a id="a09ce999e15ad60b8a3f07d08af1946f9" name="a09ce999e15ad60b8a3f07d08af1946f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09ce999e15ad60b8a3f07d08af1946f9">&#9670;&#160;</a></span>ISR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">USART_RX_vect</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00120">120</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="main_8c_source.html#l00084">comm</a> y <a class="el" href="_comm_8c_source.html#l00099">Comm_PutRxByte()</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a09ce999e15ad60b8a3f07d08af1946f9_cgraph.svg" width="235" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00391">391</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="main_8c_source.html#l00085">act0</a>, <a class="el" href="main_8c_source.html#l00085">act1</a>, <a class="el" href="main_8c_source.html#l00085">act2</a>, <a class="el" href="_actuator_8c_source.html#l00024">Actuator_Init()</a>, <a class="el" href="_actuator_8c_source.html#l00049">Actuator_Process()</a>, <a class="el" href="main_8c_source.html#l00087">actuators</a>, <a class="el" href="main_8c_source.html#l00090">beltRunning</a>, <a class="el" href="main_8c_source.html#l00093">calibMode</a>, <a class="el" href="main_8c_source.html#l00099">calibSent</a>, <a class="el" href="main_8c_source.html#l00096">calibTickCounter</a>, <a class="el" href="main_8c_source.html#l00086">classifier</a>, <a class="el" href="_classifier_8c_source.html#l00052">Classifier_Init()</a>, <a class="el" href="_classifier_8c_source.html#l00107">Classifier_Process()</a>, <a class="el" href="main_8c_source.html#l00084">comm</a>, <a class="el" href="_comm_8c_source.html#l00075">Comm_Init()</a>, <a class="el" href="_comm_8c_source.html#l00134">Comm_Process()</a>, <a class="el" href="_protocol_8h_source.html#l00058">EVT_DISTANCE</a>, <a class="el" href="_protocol_8h_source.html#l00056">EVT_IR_SENSOR</a>, <a class="el" href="_h_c_s_r04_8c_source.html#l00040">HCSR04_Init()</a>, <a class="el" href="_h_c_s_r04_8c_source.html#l00076">HCSR04_Process()</a>, <a class="el" href="_h_c_s_r04_8h_source.html#l00046">HCSR_ERROR</a>, <a class="el" href="_h_c_s_r04_8h_source.html#l00040">HCSR_IDLE</a>, <a class="el" href="_h_c_s_r04_8h_source.html#l00045">HCSR_READY</a>, <a class="el" href="_h_c_s_r04_8h_source.html#l00041">HCSR_TRIGGER</a>, <a class="el" href="main_8c_source.html#l00168">hw_Act_Set()</a>, <a class="el" href="main_8c_source.html#l00154">hw_echo_read()</a>, <a class="el" href="main_8c_source.html#l00159">hw_get_us()</a>, <a class="el" href="main_8c_source.html#l00148">hw_trigger_write()</a>, <a class="el" href="main_8c_source.html#l00129">InitTMR0()</a>, <a class="el" href="main_8c_source.html#l00138">InitTMR1()</a>, <a class="el" href="main_8c_source.html#l00363">On2ms()</a>, <a class="el" href="main_8c_source.html#l00306">OnActuatorTrigger()</a>, <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>, <a class="el" href="main_8c_source.html#l00286">OnNewBox()</a>, <a class="el" href="main_8c_source.html#l00329">ProcessIRSensors()</a>, <a class="el" href="main_8c_source.html#l00105">S0_DEBOUNCE_TICKS</a>, <a class="el" href="main_8c_source.html#l00106">s0Debounce</a>, <a class="el" href="main_8c_source.html#l00081">s0Prev</a>, <a class="el" href="main_8c_source.html#l00182">SendEvent()</a>, <a class="el" href="main_8c_source.html#l00083">sensor</a>, <a class="el" href="_servo_8c_source.html#l00058">Servo_Init()</a>, <a class="el" href="main_8c_source.html#l00053">threshGrande</a>, <a class="el" href="main_8c_source.html#l00054">threshMediana</a>, <a class="el" href="main_8c_source.html#l00055">threshPequena</a> y <a class="el" href="main_8c_source.html#l00080">time100ms</a>.</p>
+<div class="dynheader">
+Gráfico de llamadas de esta función:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a444f551736a945b391c441f057a10879" name="a444f551736a945b391c441f057a10879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a444f551736a945b391c441f057a10879">&#9670;&#160;</a></span>threshGrande</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t threshGrande = 12</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Altura de montaje del sensor: 20 cm sobre la cinta. Grande (10cm) -&gt; dist 10cm | Mediana (8cm) -&gt; dist 12cm | Pequena (6cm) -&gt; dist 14cm Los umbrales se configuran como puntos medios entre clases. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00053">53</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a> y <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a7b3ec0fe6fc332dc894f87d4c14144e9" name="a7b3ec0fe6fc332dc894f87d4c14144e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b3ec0fe6fc332dc894f87d4c14144e9">&#9670;&#160;</a></span>threshMediana</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t threshMediana = 14</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00054">54</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a> y <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a436575400cb43ced30c57e5e3101aa37" name="a436575400cb43ced30c57e5e3101aa37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a436575400cb43ced30c57e5e3101aa37">&#9670;&#160;</a></span>threshPequena</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t threshPequena = 17</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00055">55</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a> y <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a39065763dfb9f455b6daf34d92516ba4" name="a39065763dfb9f455b6daf34d92516ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39065763dfb9f455b6daf34d92516ba4">&#9670;&#160;</a></span>time100ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t time100ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00080">80</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a> y <a class="el" href="main_8c_source.html#l00363">On2ms()</a>.</p>
+
+</div>
+</div>
+<a id="ad7787e69c284986b9c6114cda187cb0e" name="ad7787e69c284986b9c6114cda187cb0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7787e69c284986b9c6114cda187cb0e">&#9670;&#160;</a></span>s0Prev</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t s0Prev = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00081">81</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+
+</div>
+</div>
+<a id="acfe328d98b369849f41eee3801ba5a85" name="acfe328d98b369849f41eee3801ba5a85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe328d98b369849f41eee3801ba5a85">&#9670;&#160;</a></span>sensor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_h_c_s_r04___setting__t.html">HCSR04_Setting_t</a> sensor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00083">83</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+
+</div>
+</div>
+<a id="a646bb5022098979b02176841374ae3e7" name="a646bb5022098979b02176841374ae3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a646bb5022098979b02176841374ae3e7">&#9670;&#160;</a></span>comm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_comm___protocol.html">Comm_Protocol</a> comm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00084">84</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_comm_8c_source.html#l00075">Comm_Init()</a>, <a class="el" href="_comm_8c_source.html#l00134">Comm_Process()</a>, <a class="el" href="_comm_8c_source.html#l00099">Comm_PutRxByte()</a>, <a class="el" href="_comm_8c_source.html#l00104">Comm_Send()</a>, <a class="el" href="main_8c_source.html#l00120">ISR()</a>, <a class="el" href="main_8c_source.html#l00391">main()</a>, <a class="el" href="_comm_8c_source.html#l00042">putTxByte()</a> y <a class="el" href="main_8c_source.html#l00182">SendEvent()</a>.</p>
+
+</div>
+</div>
+<a id="aa53811047b4b4e429c5023a66cb9b4a4" name="aa53811047b4b4e429c5023a66cb9b4a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa53811047b4b4e429c5023a66cb9b4a4">&#9670;&#160;</a></span>act0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_actuator__t.html">Actuator_t</a> act0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00085">85</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+
+</div>
+</div>
+<a id="ac84a626532edc6b7062d2e0b9527b798" name="ac84a626532edc6b7062d2e0b9527b798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac84a626532edc6b7062d2e0b9527b798">&#9670;&#160;</a></span>act1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_actuator__t.html">Actuator_t</a> act1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00085">85</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+
+</div>
+</div>
+<a id="abbea892f447c96e6bbfd32555d8ac10d" name="abbea892f447c96e6bbfd32555d8ac10d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbea892f447c96e6bbfd32555d8ac10d">&#9670;&#160;</a></span>act2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_actuator__t.html">Actuator_t</a> act2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00085">85</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>.</p>
+
+</div>
+</div>
+<a id="a46dd3c09226bc8dd225072b95624dabd" name="a46dd3c09226bc8dd225072b95624dabd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46dd3c09226bc8dd225072b95624dabd">&#9670;&#160;</a></span>classifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structclassifier__t.html">classifier_t</a> classifier</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00086">86</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>, <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a> y <a class="el" href="main_8c_source.html#l00286">OnNewBox()</a>.</p>
+
+</div>
+</div>
+<a id="aaaf161fb032b93f4611c126340d14bb5" name="aaaf161fb032b93f4611c126340d14bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf161fb032b93f4611c126340d14bb5">&#9670;&#160;</a></span>actuators</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_actuator__t.html">Actuator_t</a>* actuators[3]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00087">87</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>, <a class="el" href="main_8c_source.html#l00306">OnActuatorTrigger()</a> y <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="af4efa723d1dc9c4a5e628b6978ed01fd" name="af4efa723d1dc9c4a5e628b6978ed01fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4efa723d1dc9c4a5e628b6978ed01fd">&#9670;&#160;</a></span>beltRunning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t beltRunning = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Estado de la cinta: 0 = detenida, 1 = clasificando. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00090">90</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a> y <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a>.</p>
+
+</div>
+</div>
+<a id="a41b7d8ae4187b57317a4ca0a6bed2a3d" name="a41b7d8ae4187b57317a4ca0a6bed2a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b7d8ae4187b57317a4ca0a6bed2a3d">&#9670;&#160;</a></span>calibMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t calibMode = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Modo calibracion: 0 = normal, 1 = calibrando. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00093">93</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>, <a class="el" href="main_8c_source.html#l00363">On2ms()</a>, <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a> y <a class="el" href="main_8c_source.html#l00329">ProcessIRSensors()</a>.</p>
+
+</div>
+</div>
+<a id="a5f32ee1cc79e9b644ec7be56a1594d50" name="a5f32ee1cc79e9b644ec7be56a1594d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f32ee1cc79e9b644ec7be56a1594d50">&#9670;&#160;</a></span>calibTickCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t calibTickCounter = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Contador de ticks para medir tiempos de calibracion (desde S0). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00096">96</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>, <a class="el" href="main_8c_source.html#l00363">On2ms()</a>, <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a> y <a class="el" href="main_8c_source.html#l00329">ProcessIRSensors()</a>.</p>
+
+</div>
+</div>
+<a id="a2a424e3709010d7bd2b22790bb87ce23" name="a2a424e3709010d7bd2b22790bb87ce23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a424e3709010d7bd2b22790bb87ce23">&#9670;&#160;</a></span>calibSent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t calibSent[3] = {0, 0, 0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Flags para evitar envio duplicado del tiempo de cada sensor en calibracion. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00099">99</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a>, <a class="el" href="main_8c_source.html#l00195">OnCommCmd()</a> y <a class="el" href="main_8c_source.html#l00329">ProcessIRSensors()</a>.</p>
+
+</div>
+</div>
+<a id="ae5e715d053904e7b14caeb8653250598" name="ae5e715d053904e7b14caeb8653250598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e715d053904e7b14caeb8653250598">&#9670;&#160;</a></span>irPrev</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t irPrev[3] = {0, 0, 0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Estado previo de los sensores IR S1, S2, S3 (para deteccion de flanco). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00102">102</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00329">ProcessIRSensors()</a>.</p>
+
+</div>
+</div>
+<a id="ae6d19b8a9bda31e0ce6e390737c9d3f9" name="ae6d19b8a9bda31e0ce6e390737c9d3f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6d19b8a9bda31e0ce6e390737c9d3f9">&#9670;&#160;</a></span>s0Debounce</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t s0Debounce = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00106">106</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00391">main()</a> y <a class="el" href="main_8c_source.html#l00363">On2ms()</a>.</p>
+
+</div>
+</div>
+<a id="a5b3fdc86390d111506b053d06fcbff95" name="a5b3fdc86390d111506b053d06fcbff95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b3fdc86390d111506b053d06fcbff95">&#9670;&#160;</a></span>aliveCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t aliveCounter = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Contador heartbeat para envio de alive al HMI. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="main_8c_source.html#l00109">109</a> del archivo <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="main_8c_source.html#l00363">On2ms()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_a71bf7082d0bc336a2dcaf2cce875bb7.html">CintaReal</a></li><li class="navelem"><a href="main_8c.html">main.c</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para Clasificador de Cajas - Firmware ATmega328P por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

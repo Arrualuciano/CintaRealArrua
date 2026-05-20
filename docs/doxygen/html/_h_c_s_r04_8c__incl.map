@@ -1,0 +1,7 @@
+<map id="HCSR04.c" name="HCSR04.c">
+<area shape="rect" id="Node000001" title="Implementacion del driver para sensor ultrasonico HC&#45;SR04." alt="" coords="5,5,91,32"/>
+<area shape="rect" id="Node000002" href="$_h_c_s_r04_8h.html" title="Driver para sensor ultrasonico HC&#45;SR04." alt="" coords="5,80,91,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,30,51,65,45,64,47,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="16,155,80,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="50,105,51,140,45,139,46,109"/>
+</map>

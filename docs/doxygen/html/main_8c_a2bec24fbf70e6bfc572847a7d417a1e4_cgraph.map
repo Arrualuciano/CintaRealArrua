@@ -1,0 +1,7 @@
+<map id="SendEvent" name="SendEvent">
+<area shape="rect" id="Node000001" title="Envia un evento al HMI Qt via protocolo UNER." alt="" coords="5,5,91,32"/>
+<area shape="rect" id="Node000002" href="$_comm_8c.html#ae71d12e317420e00d9c2ce5f67ecf640" title="Encola una trama UNER en el buffer de transmision." alt="" coords="139,5,236,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,16,126,18,121,19,91,21"/>
+<area shape="rect" id="Node000003" href="$_comm_8c.html#ae2ccc0b50360e3c4a2ee0c5bd8c5960c" title="Escribe un byte en el buffer circular de transmision." alt="" coords="284,5,365,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="236,16,271,19,266,19,237,21"/>
+</map>

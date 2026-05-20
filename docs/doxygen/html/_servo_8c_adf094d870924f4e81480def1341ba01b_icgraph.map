@@ -1,0 +1,7 @@
+<map id="Servo_SetPosition" name="Servo_SetPosition">
+<area shape="rect" id="Node000001" title="Cambia la posicion de un servomotor." alt="" coords="243,5,372,32"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a0dc9b955fb9b7e24a7c87f98f363b981" title="Controla un actuador: mueve el servo fisico." alt="" coords="103,5,195,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,19,196,21,196,16,230,19"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="84,19,55,21,55,16,89,18"/>
+</map>

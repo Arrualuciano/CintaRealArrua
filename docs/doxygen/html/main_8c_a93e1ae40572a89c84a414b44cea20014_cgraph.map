@@ -1,0 +1,15 @@
+<map id="OnCommCmd" name="OnCommCmd">
+<area shape="rect" id="Node000001" title="Despacha comandos recibidos via protocolo UNER desde el HMI." alt="" coords="5,81,111,108"/>
+<area shape="rect" id="Node000002" href="$_actuator_8c.html#aa4fc0a416ac8c36eed04620062ff1b6f" title="Solicita el disparo del actuador." alt="" coords="159,5,276,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,78,158,42,172,37,168,40,160,46,87,83"/>
+<area shape="rect" id="Node000003" href="$_classifier_8c.html#a9c6e1aa223069277aeafe4c0b5c91f2a" title="Vacia la lista de cajas en transito sin modificar la configuracion." alt="" coords="159,56,277,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,84,145,80,141,83,112,89"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a2bec24fbf70e6bfc572847a7d417a1e4" title="Envia un evento al HMI Qt via protocolo UNER." alt="" coords="175,107,260,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="111,100,162,110,157,112,111,106"/>
+<area shape="rect" id="Node000007" href="$_servo_8c.html#a0a5bd5a9c1516f5420e3e2435fee3f17" title="Ajusta el ancho de pulso de extension de un servo." alt="" coords="160,157,276,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="86,106,160,143,173,151,167,150,158,148,85,111"/>
+<area shape="rect" id="Node000005" href="$_comm_8c.html#ae71d12e317420e00d9c2ce5f67ecf640" title="Encola una trama UNER en el buffer de transmision." alt="" coords="325,107,422,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="261,117,312,120,307,120,261,123"/>
+<area shape="rect" id="Node000006" href="$_comm_8c.html#ae2ccc0b50360e3c4a2ee0c5bd8c5960c" title="Escribe un byte en el buffer circular de transmision." alt="" coords="470,107,552,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="423,117,458,120,452,120,423,123"/>
+</map>

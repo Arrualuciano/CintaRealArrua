@@ -1,0 +1,7 @@
+<map id="Classifier_NewBox" name="Classifier_NewBox">
+<area shape="rect" id="Node000001" title="Registra una nueva caja medida por el HC&#45;SR04." alt="" coords="239,5,372,32"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a86b74d914b1f6afb62d8bd1e4e31d166" title="Registra una nueva caja y envia el evento al HMI." alt="" coords="103,5,191,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,19,192,21,192,16,226,19"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
+</map>

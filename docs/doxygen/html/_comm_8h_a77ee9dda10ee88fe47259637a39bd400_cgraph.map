@@ -1,0 +1,5 @@
+<map id="Comm_Send" name="Comm_Send">
+<area shape="rect" id="Node000001" title="Encola una trama UNER en el buffer de transmision." alt="" coords="5,5,103,32"/>
+<area shape="rect" id="Node000002" href="$_comm_8c.html#ae2ccc0b50360e3c4a2ee0c5bd8c5960c" title="Escribe un byte en el buffer circular de transmision." alt="" coords="151,5,232,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,16,138,18,133,19,103,21"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Comm.h" name="Comm.h">
+<area shape="rect" id="Node000001" title="Modulo de comunicacion serie con protocolo UNER." alt="" coords="49,5,121,32"/>
+<area shape="rect" id="Node000002" href="$_comm_8c.html" title="Implementacion del modulo de comunicacion serie con protocolo UNER." alt="" coords="5,80,77,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,45,51,81,46,78,67,46"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title="Aplicacion principal del clasificador de cajas en cinta transportadora real." alt="" coords="100,80,160,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,43,125,80,120,79,100,48"/>
+</map>

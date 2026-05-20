@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.16.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Clasificador de Cajas - Firmware ATmega328P: Archivo de código fuente Comm.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Clasificador de Cajas - Firmware ATmega328P<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Firmware para sistema de clasificacion de paquetes por altura en cinta transportadora</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.16.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_comm_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Comm.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_comm_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file    Comm.h</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief   Modulo de comunicacion serie con protocolo UNER.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @details Implementa el protocolo de trama UNER sobre UART0 del ATmega.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *          Formato de trama:</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *          @code</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *          [ &#39;U&#39; | &#39;N&#39; | &#39;E&#39; | &#39;R&#39; | LEN | &#39;:&#39; | CMDID | DATA... | CKS ]</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *          @endcode</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> *          donde LEN = 1 (CMDID) + N (bytes de datos) + 1 (CKS), y</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> *          CKS = XOR de todos los bytes desde &#39;U&#39; hasta el ultimo dato.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *          El modulo utiliza dos buffers circulares (RingBuf) de 128 bytes</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *          para desacoplar la ISR de recepcion del procesamiento en el</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *          main loop.</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * @author  Luciano</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * @date    Abril 2026</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifndef COMM_H_</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define COMM_H_</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/** @brief Tamano maximo del payload (CMDID + datos) que se puede recibir. */</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_comm_8h.html#ade8b488283f8ae802002c4688cd37e9d">   25</a></span><span class="preprocessor">#define COMM_MAX_PAYLOAD  32</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="_ring_buf_8h.html">RingBuf.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"></span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * @brief Tipo de callback invocado al recibir un comando valido.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * @param idComm  Identificador del comando recibido.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * @param payload Puntero al arreglo de bytes de datos (sin CMDID ni CKS).</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * @param nBytes  Cantidad de bytes de datos en @p payload.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_comm_8h.html#ab9dc264f17097dbca03a41e9993ce58d">   37</a></span><span class="keyword">typedef</span> void (*<a class="code hl_typedef" href="_comm_8h.html#ab9dc264f17097dbca03a41e9993ce58d">comm_cmd_cb</a>)(uint8_t idComm, uint8_t *payload, uint8_t nBytes);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> * @brief Contexto completo de una instancia del protocolo UNER.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> * @note  Debe inicializarse con Comm_Init() antes de usar cualquier otra</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> *        funcion del modulo.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html">   45</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#a144ba9511e8f9cbf3fa026dd08d06449">   46</a></span>    <a class="code hl_struct" href="struct_ring_buf__t.html">RingBuf_t</a>    <a class="code hl_variable" href="struct_comm___protocol.html#a144ba9511e8f9cbf3fa026dd08d06449">rxBuf</a>;                   <span class="comment">/**&lt; Buffer circular de recepcion.          */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#ae25a6d6816c63a9cf6e9b151d46e1030">   47</a></span>    <a class="code hl_struct" href="struct_ring_buf__t.html">RingBuf_t</a>    <a class="code hl_variable" href="struct_comm___protocol.html#ae25a6d6816c63a9cf6e9b151d46e1030">txBuf</a>;                   <span class="comment">/**&lt; Buffer circular de transmision.        */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#a32d8f2a65fb9164ba88a6b2b1926d393">   48</a></span>    <a class="code hl_typedef" href="_comm_8h.html#ab9dc264f17097dbca03a41e9993ce58d">comm_cmd_cb</a>  <a class="code hl_variable" href="struct_comm___protocol.html#a32d8f2a65fb9164ba88a6b2b1926d393">onCmd</a>;                   <span class="comment">/**&lt; Callback para comandos validos.        */</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#aa920b3173cb2563b8f005a812dcc0250">   49</a></span>    uint8_t      <a class="code hl_variable" href="struct_comm___protocol.html#aa920b3173cb2563b8f005a812dcc0250">cks</a>;                     <span class="comment">/**&lt; Checksum acumulado durante recepcion.  */</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#a9acdc355eaa8fc93548332e0d5902290">   50</a></span>    uint8_t      <a class="code hl_variable" href="struct_comm___protocol.html#a9acdc355eaa8fc93548332e0d5902290">timeOut</a>;                 <span class="comment">/**&lt; Temporizador de timeout (reservado).   */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#a2bd877d213a97d1e8a57cb6c96b61b74">   51</a></span>    uint8_t      <a class="code hl_variable" href="struct_comm___protocol.html#a2bd877d213a97d1e8a57cb6c96b61b74">hdrState</a>;                <span class="comment">/**&lt; Estado actual de la FSM de decodificacion. */</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#af681e2b165300589ced10e96c4423d21">   52</a></span>    uint8_t      <a class="code hl_variable" href="struct_comm___protocol.html#af681e2b165300589ced10e96c4423d21">nBytes</a>;                  <span class="comment">/**&lt; Bytes restantes del payload en curso.  */</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#a2632bd9934577064d809dce5ffa990c0">   53</a></span>    uint8_t      <a class="code hl_variable" href="struct_comm___protocol.html#a2632bd9934577064d809dce5ffa990c0">payload</a>[<a class="code hl_define" href="_comm_8h.html#ade8b488283f8ae802002c4688cd37e9d">COMM_MAX_PAYLOAD</a>]; <span class="comment">/**&lt; Buffer de payload en construccion.   */</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_comm___protocol.html#a9e7aaa41a8ca65863a70cb5391d59dca">   54</a></span>    uint8_t      <a class="code hl_variable" href="struct_comm___protocol.html#a9e7aaa41a8ca65863a70cb5391d59dca">payloadIdx</a>;              <span class="comment">/**&lt; Indice de escritura dentro de payload. */</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>} <a class="code hl_struct" href="struct_comm___protocol.html">Comm_Protocol</a>;</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"></span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> * @brief Inicializa el modulo de comunicacion y el hardware UART.</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"> * @param comm     Puntero a la instancia Comm_Protocol a inicializar.</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment"> * @param callback Funcion que se invocara cada vez que llegue un comando valido.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">void</span> <a class="code hl_function" href="_comm_8h.html#a6cfe672dc0c2ab687ef544a79edf456e">Comm_Init</a>(<a class="code hl_struct" href="struct_comm___protocol.html">Comm_Protocol</a> *<a class="code hl_variable" href="main_8c.html#a646bb5022098979b02176841374ae3e7">comm</a>, <a class="code hl_typedef" href="_comm_8h.html#ab9dc264f17097dbca03a41e9993ce58d">comm_cmd_cb</a> callback);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"></span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"> * @brief Configura el periferico UART0 del ATmega.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment"> * @details 115200 baud, 8N1, con bit U2X activado.</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"> *          Habilita interrupcion de recepcion (RXCIE) para alimentar el</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment"> *          buffer RX desde la ISR.</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> <a class="code hl_function" href="_comm_8h.html#ab7be665dc1d0fbffa21b750006b48b74">Comm_InitUART</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment"></span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment"> * @brief Agrega un byte recibido por la ISR al buffer circular de RX.</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment"> * @details Debe llamarse exclusivamente desde la ISR USART_RX_vect.</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment"> * @param comm    Puntero a la instancia Comm_Protocol.</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment"> * @param byteISR Byte leido del registro UDR0 dentro de la ISR.</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> <a class="code hl_function" href="_comm_8h.html#adc29f6aa2db438998b0412124cd085fa">Comm_PutRxByte</a>(<a class="code hl_struct" href="struct_comm___protocol.html">Comm_Protocol</a> *<a class="code hl_variable" href="main_8c.html#a646bb5022098979b02176841374ae3e7">comm</a>, uint8_t byteISR);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment"></span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment"> * @brief Procesa el modulo de comunicacion: envio y recepcion.</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment"> * @details Debe llamarse periodicamente desde el main loop (no bloqueante).</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment"> *          - TX: transmite un byte pendiente si el registro UDR0 esta libre.</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"> *          - RX: corre la FSM UNER sobre todos los bytes disponibles en el</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment"> *            buffer de recepcion e invoca el callback @p onCmd al completar</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"> *            una trama valida con checksum correcto.</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment"> * @param comm Puntero a la instancia Comm_Protocol.</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keywordtype">void</span> <a class="code hl_function" href="_comm_8h.html#af20278a74728fea0f1f369ef36e0880b">Comm_Process</a>(<a class="code hl_struct" href="struct_comm___protocol.html">Comm_Protocol</a> *<a class="code hl_variable" href="main_8c.html#a646bb5022098979b02176841374ae3e7">comm</a>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment"></span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment"> * @brief Encola una trama UNER en el buffer de transmision.</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment"> * @details Construye y encola la trama completa: encabezado, LEN, &#39;:&#39;, CMDID,</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment"> *          datos y checksum. La transmision efectiva ocurre en Comm_Process().</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment"> * @param comm     Puntero a la instancia Comm_Protocol.</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment"> * @param cmdId    Identificador del comando a enviar.</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment"> * @param data     Puntero a los bytes de datos (puede ser NULL si nroBytes == 0).</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment"> * @param nroBytes Cantidad de bytes de datos en @p data.</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keywordtype">void</span> <a class="code hl_function" href="_comm_8h.html#a77ee9dda10ee88fe47259637a39bd400">Comm_Send</a>(<a class="code hl_struct" href="struct_comm___protocol.html">Comm_Protocol</a> *<a class="code hl_variable" href="main_8c.html#a646bb5022098979b02176841374ae3e7">comm</a>, uint8_t cmdId, uint8_t *data, uint8_t nroBytes);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif </span><span class="comment">/* COMM_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_comm_8h_html_a6cfe672dc0c2ab687ef544a79edf456e"><div class="ttname"><a href="_comm_8h.html#a6cfe672dc0c2ab687ef544a79edf456e">Comm_Init</a></div><div class="ttdeci">void Comm_Init(Comm_Protocol *comm, comm_cmd_cb callback)</div><div class="ttdoc">Inicializa el modulo de comunicacion y el hardware UART.</div><div class="ttdef"><b>Definition</b> <a href="_comm_8c_source.html#l00075">Comm.c:75</a></div></div>
+<div class="ttc" id="a_comm_8h_html_a77ee9dda10ee88fe47259637a39bd400"><div class="ttname"><a href="_comm_8h.html#a77ee9dda10ee88fe47259637a39bd400">Comm_Send</a></div><div class="ttdeci">void Comm_Send(Comm_Protocol *comm, uint8_t cmdId, uint8_t *data, uint8_t nroBytes)</div><div class="ttdoc">Encola una trama UNER en el buffer de transmision.</div><div class="ttdef"><b>Definition</b> <a href="_comm_8c_source.html#l00104">Comm.c:104</a></div></div>
+<div class="ttc" id="a_comm_8h_html_ab7be665dc1d0fbffa21b750006b48b74"><div class="ttname"><a href="_comm_8h.html#ab7be665dc1d0fbffa21b750006b48b74">Comm_InitUART</a></div><div class="ttdeci">void Comm_InitUART(void)</div><div class="ttdoc">Configura el periferico UART0 del ATmega.</div><div class="ttdef"><b>Definition</b> <a href="_comm_8c_source.html#l00068">Comm.c:68</a></div></div>
+<div class="ttc" id="a_comm_8h_html_ab9dc264f17097dbca03a41e9993ce58d"><div class="ttname"><a href="_comm_8h.html#ab9dc264f17097dbca03a41e9993ce58d">comm_cmd_cb</a></div><div class="ttdeci">void(* comm_cmd_cb)(uint8_t idComm, uint8_t *payload, uint8_t nBytes)</div><div class="ttdoc">Tipo de callback invocado al recibir un comando valido.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">Comm.h:37</a></div></div>
+<div class="ttc" id="a_comm_8h_html_adc29f6aa2db438998b0412124cd085fa"><div class="ttname"><a href="_comm_8h.html#adc29f6aa2db438998b0412124cd085fa">Comm_PutRxByte</a></div><div class="ttdeci">void Comm_PutRxByte(Comm_Protocol *comm, uint8_t byteISR)</div><div class="ttdoc">Agrega un byte recibido por la ISR al buffer circular de RX.</div><div class="ttdef"><b>Definition</b> <a href="_comm_8c_source.html#l00099">Comm.c:99</a></div></div>
+<div class="ttc" id="a_comm_8h_html_ade8b488283f8ae802002c4688cd37e9d"><div class="ttname"><a href="_comm_8h.html#ade8b488283f8ae802002c4688cd37e9d">COMM_MAX_PAYLOAD</a></div><div class="ttdeci">#define COMM_MAX_PAYLOAD</div><div class="ttdoc">Tamano maximo del payload (CMDID + datos) que se puede recibir.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">Comm.h:25</a></div></div>
+<div class="ttc" id="a_comm_8h_html_af20278a74728fea0f1f369ef36e0880b"><div class="ttname"><a href="_comm_8h.html#af20278a74728fea0f1f369ef36e0880b">Comm_Process</a></div><div class="ttdeci">void Comm_Process(Comm_Protocol *comm)</div><div class="ttdoc">Procesa el modulo de comunicacion: envio y recepcion.</div><div class="ttdef"><b>Definition</b> <a href="_comm_8c_source.html#l00134">Comm.c:134</a></div></div>
+<div class="ttc" id="a_ring_buf_8h_html"><div class="ttname"><a href="_ring_buf_8h.html">RingBuf.h</a></div><div class="ttdoc">Buffer circular (ring buffer) de proposito general.</div></div>
+<div class="ttc" id="amain_8c_html_a646bb5022098979b02176841374ae3e7"><div class="ttname"><a href="main_8c.html#a646bb5022098979b02176841374ae3e7">comm</a></div><div class="ttdeci">static Comm_Protocol comm</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00084">main.c:84</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html"><div class="ttname"><a href="struct_comm___protocol.html">Comm_Protocol</a></div><div class="ttdoc">Contexto completo de una instancia del protocolo UNER.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">Comm.h:45</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_a144ba9511e8f9cbf3fa026dd08d06449"><div class="ttname"><a href="struct_comm___protocol.html#a144ba9511e8f9cbf3fa026dd08d06449">Comm_Protocol::rxBuf</a></div><div class="ttdeci">RingBuf_t rxBuf</div><div class="ttdef"><b>Definition</b> <a href="#l00046">Comm.h:46</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_a2632bd9934577064d809dce5ffa990c0"><div class="ttname"><a href="struct_comm___protocol.html#a2632bd9934577064d809dce5ffa990c0">Comm_Protocol::payload</a></div><div class="ttdeci">uint8_t payload[32]</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Comm.h:53</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_a2bd877d213a97d1e8a57cb6c96b61b74"><div class="ttname"><a href="struct_comm___protocol.html#a2bd877d213a97d1e8a57cb6c96b61b74">Comm_Protocol::hdrState</a></div><div class="ttdeci">uint8_t hdrState</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Comm.h:51</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_a32d8f2a65fb9164ba88a6b2b1926d393"><div class="ttname"><a href="struct_comm___protocol.html#a32d8f2a65fb9164ba88a6b2b1926d393">Comm_Protocol::onCmd</a></div><div class="ttdeci">comm_cmd_cb onCmd</div><div class="ttdef"><b>Definition</b> <a href="#l00048">Comm.h:48</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_a9acdc355eaa8fc93548332e0d5902290"><div class="ttname"><a href="struct_comm___protocol.html#a9acdc355eaa8fc93548332e0d5902290">Comm_Protocol::timeOut</a></div><div class="ttdeci">uint8_t timeOut</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Comm.h:50</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_a9e7aaa41a8ca65863a70cb5391d59dca"><div class="ttname"><a href="struct_comm___protocol.html#a9e7aaa41a8ca65863a70cb5391d59dca">Comm_Protocol::payloadIdx</a></div><div class="ttdeci">uint8_t payloadIdx</div><div class="ttdef"><b>Definition</b> <a href="#l00054">Comm.h:54</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_aa920b3173cb2563b8f005a812dcc0250"><div class="ttname"><a href="struct_comm___protocol.html#aa920b3173cb2563b8f005a812dcc0250">Comm_Protocol::cks</a></div><div class="ttdeci">uint8_t cks</div><div class="ttdef"><b>Definition</b> <a href="#l00049">Comm.h:49</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_ae25a6d6816c63a9cf6e9b151d46e1030"><div class="ttname"><a href="struct_comm___protocol.html#ae25a6d6816c63a9cf6e9b151d46e1030">Comm_Protocol::txBuf</a></div><div class="ttdeci">RingBuf_t txBuf</div><div class="ttdef"><b>Definition</b> <a href="#l00047">Comm.h:47</a></div></div>
+<div class="ttc" id="astruct_comm___protocol_html_af681e2b165300589ced10e96c4423d21"><div class="ttname"><a href="struct_comm___protocol.html#af681e2b165300589ced10e96c4423d21">Comm_Protocol::nBytes</a></div><div class="ttdeci">uint8_t nBytes</div><div class="ttdef"><b>Definition</b> <a href="#l00052">Comm.h:52</a></div></div>
+<div class="ttc" id="astruct_ring_buf__t_html"><div class="ttname"><a href="struct_ring_buf__t.html">RingBuf_t</a></div><div class="ttdoc">Descriptor de un buffer circular.</div><div class="ttdef"><b>Definition</b> <a href="_ring_buf_8h_source.html#l00041">RingBuf.h:41</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_a71bf7082d0bc336a2dcaf2cce875bb7.html">CintaReal</a></li><li class="navelem"><a href="_comm_8h.html">Comm.h</a></li>
+    <li class="footer">Generado el <span class="timestamp"></span> para Clasificador de Cajas - Firmware ATmega328P por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
+  </ul>
+</div>
+</body>
+</html>

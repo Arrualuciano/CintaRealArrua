@@ -1,0 +1,7 @@
+<map id="Servo.h" name="Servo.h">
+<area shape="rect" id="Node000001" title="Driver PWM por software para servomotores SG90." alt="" coords="49,5,116,32"/>
+<area shape="rect" id="Node000002" href="$_servo_8c.html" title="Implementacion del driver PWM por software para servomotores SG90." alt="" coords="5,80,72,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,45,48,81,44,78,64,46"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title="Aplicacion principal del clasificador de cajas en cinta transportadora real." alt="" coords="96,80,157,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,43,122,80,116,79,97,48"/>
+</map>
